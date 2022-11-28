@@ -1,0 +1,32 @@
+MODEL:
+  NAME: 'regnet_x_1_6gf'
+  TYPE: 'backbone'
+  NUM_CLASSES: 100
+  LOSS_FUN: 'soft_cross_entropy'
+  LOAD_WEIGHTS_FROM_URL: False
+  WEIGHTS: 'tmp/checkpoints/regnet_x_1_6gf/IM100_CSR192_W080_train_epoch_100_acc_83.60.ckpt'
+OPTIM:
+  OPTIMIZER: 'sgd'
+  BASE_LR: 2.0
+  LR_POLICY: 'exp'
+  MAX_EPOCH: 100
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 2e-5
+  WARMUP_EPOCHS: 5
+  DAMPENING: 0.0
+  NESTEROV: True
+  EMA_UPDATE_PERIOD: 0
+TRAIN:
+  BATCH_SIZE: 1024
+  LABEL_SMOOTHING: 0.1
+  MIXUP_ALPHA: 0.0
+  PCA_STD: 0.1
+TEST:
+  BATCH_SIZE: 100
+SCALING:
+  RES_MULT_A: 0.86
+  WIDTH_MULT: 0.8
+DATASET:
+  PATH: "/PATH/TO/YOUR/DATASET"
+  NAME: 'imagenet100'
+NUM_GPUS: 4

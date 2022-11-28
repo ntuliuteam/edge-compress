@@ -1,0 +1,28 @@
+MODEL:
+  TYPE: 'backbone'
+  LOSS_FUN: 'soft_cross_entropy'
+  LOAD_WEIGHTS_FROM_URL: False
+  BOX_WEIGHTS: 'output/checkpoints/box_predictors/cropnet_anynet_light_box/model_epoch_032_acc_0.62.ckpt'
+TEST:
+  BATCH_SIZE: 128
+CROP:
+  TYPE: 'cropnet_anynet_light_box'
+  SPLIT: 'val'
+  SHAPE: 'square'
+  REGULATE: True
+SCALING:
+  RES_MULT_A: 1.0
+DYNAMIC:
+  COUNT: True
+  THRESHOLD_HIGH: 0.03
+  ALPHA: 1.6
+  THRESHOLD_LOW: 0.0
+  MODELS: ['resnet50_D08', 'resnet50']
+  WEIGHTS: ['output/checkpoints/imagenet_1k/smart_scissor/CSSR184_W050_D080_tune_epoch_acc_73.86.ckpt',
+            'output/checkpoints/imagenet_1k/smart_scissor/SSR_224_tune_epoch_013_acc_77.20.ckpt']
+  WIDTH_MULTS: [0.5, 1.0]
+  RES_MULTS: [0.821, 1.0]
+DATASET:
+  PATH: 'PATH/TO/YOUR/DATASET'
+  NAME: 'imagenet_for_crop'
+NUM_GPUS: 1

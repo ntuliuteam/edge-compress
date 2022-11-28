@@ -1,0 +1,30 @@
+MODEL:
+  NAME: 'resnet50_D09'
+  TYPE: 'backbone'
+  LOSS_FUN: 'soft_cross_entropy'
+  LOAD_WEIGHTS_FROM_URL: False
+  BOX_WEIGHTS: 'output/cropnet_effnet-b1/checkpoints/cropnet_effnet/box_epoch_029_acc_0.63.ckpt'
+  WEIGHTS: 'output/checkpoints/imagenet_1k/smart_scissor/CSSR208_W055_D090_tune_epoch_016_acc_75.56.ckpt'
+EN:
+  STEM_W: 32
+  STRIDES: [ 1, 2, 2, 2, 1, 2, 1 ]
+  DEPTHS: [ 2, 3, 3, 4, 4, 5, 2 ]
+  WIDTHS: [ 16, 24, 40, 80, 112, 192, 320 ]
+  EXP_RATIOS: [ 1, 6, 6, 6, 6, 6, 6 ]
+  KERNELS: [ 3, 3, 5, 3, 5, 5, 3 ]
+  HEAD_W: 1280
+TEST:
+  BATCH_SIZE: 256
+CROP:
+  TYPE: 'cropnet_effnet'
+  SPLIT: 'val'
+  SHAPE: 'square'
+  REGULATE: True
+SCALING:
+  RES_MULT_A: 1.0
+  RES_MULT_B: 0.928
+  WIDTH_MULT: 0.55
+DATASET:
+  PATH: 'PATH/TO/YOUR/DATASET'
+  NAME: 'imagenet_for_crop'
+NUM_GPUS: 1
