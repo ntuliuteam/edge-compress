@@ -107,7 +107,7 @@ and you will obtain an output as follows:
 [meters.py: 464]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "max_top1_acc": 76.8380, "max_top5_acc": 92.9460, "mem": 2919, "time_avg": 0.1148, "time_epoch": 44.8804, "top1_acc": 76.8380, "top5_acc": 92.9460}
 ```
 
-The trade-off between model MACs and accuracy of our dynamic inference framework is controled by the hyperparameter **DYNAMIC.THRESHOLD_HIGH**. If you want to acheive higher accuracy at the cost higher model MACs, just increase the value. Otherwise, you can tune down the value of the hyperparameter to improve the model execution efficiency.
+The trade-off between model MACs and accuracy of our dynamic inference framework is controlled by the hyperparameter **DYNAMIC.THRESHOLD_HIGH**. If you want to acheive higher accuracy at the cost of higher model MACs, just increase the value. Otherwise, you can tune down the value of the hyperparameter to improve the model execution efficiency.
 
 ### Parallel processing with multiple GPUs
 It's worth noting that all models support parallel processing by specifying the execution hyperparameter **NUM_GPUS**.
