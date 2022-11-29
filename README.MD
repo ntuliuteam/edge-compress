@@ -90,24 +90,29 @@ If everything goes right, you will obtain the following output:
 [meters.py: 464]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "max_top1_acc": 73.8660, "max_top5_acc": 91.6160, "mem": 1650, "time_avg": 0.0679, "time_epoch": 13.3026, "top1_acc": 73.8660, "top5_acc": 91.6160}
 ```
 
+To evaluate other static models, you just need to change to configuration file and the path to the corresponding pretrained weights.
+
 ### Dynamic inference
 To evaluate our dynamic inference framework, using the following command:
 
 ```
 python3 main.py -m dy_eval -c configs/ec-dynamic.yaml
                 DATASET.PATH path/to/imagenet/dataset
+                DYNAMIC.THRESHOLD_HIGH 0.2
 ```
 
 and you will obtain an output as follows:
 
 ```
-[meters.py: 464]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "max_top1_acc": 77.6900, "max_top5_acc": 93.4220, "mem": 3122, "time_avg": 0.1445, "time_epoch": 56.4998, "top1_acc": 77.6900, "top5_acc": 93.4220}
+[meters.py: 464]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "max_top1_acc": 76.8380, "max_top5_acc": 92.9460, "mem": 2919, "time_avg": 0.1148, "time_epoch": 44.8804, "top1_acc": 76.8380, "top5_acc": 92.9460}
 ```
+
+The trade-off between model MACs and accuracy of our dynamic inference framework is controled by the hyperparameter **DYNAMIC.THRESHOLD_HIGH**. If you want to acheive higher accuracy at the cost higher model MACs, just increase the value. Otherwise, you can tune down the value of the hyperparameter to improve the model execution efficiency.
 
 ### Parallel processing with multiple GPUs
 It's worth noting that all models support parallel processing by specifying the execution hyperparameter **NUM_GPUS**.
 
-For example, to evaluate the **EC-Static-1** model with 4 GPUs, you just need to slight adjust the execution command as follows:
+For example, to evaluate the **EC-Static-1** model with 4 GPUs, you just need to slightly adjust the execution command as follows:
 
 ```
 python3 main.py -m crop_eval -c configs/ec-static-1.yaml
@@ -115,4 +120,4 @@ python3 main.py -m crop_eval -c configs/ec-static-1.yaml
                 DATASET.PATH path/to/imagenet/dataset
                 NUM_GPUS 4
 ```
-and you can easily accelerate the evaluation process.
+and then you can easily accelerate the evaluation process.
