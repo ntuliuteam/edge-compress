@@ -4,4 +4,4 @@ This repository is provided for reproducing the experimental results reported in
 
 ## Overview of The Proposed Framework
 
-<img alt="framework" height="200px" src="https://github.com/ntuliuteam/edge-compress/images/framework.png">
+<img alt="framework" height="200px" src="https://github.com/ntuliuteam/edge-compress/tree/main/images/framework.png">
