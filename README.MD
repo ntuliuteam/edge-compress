@@ -54,26 +54,22 @@ To reproduce the results reported in the paper, you need to get the datasets rea
       --...
    ```
 
-**CIFAR-10**
 
-* Official Introduction
-    >  The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images. The dataset is divided into five training batches and one test batch, each with 10000 images. The test batch contains exactly 1000 randomly-selected images from each class. The training batches contain the remaining images in random order, but some training batches may contain more images from one class than another. Between them, the training batches contain exactly 5000 images from each class.
+## Pretrained Models
 
-1. Download CIFAR-10 dataset via this [LINK](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)
-2. Extract images with the following command:
-   ```
-   tar -zxvf cifar-10-python.tar.gz
-   ```
+### 1. ImageNet
 
-3. Finally, the dataset folder should have the following architecture:
-   ```
-   --cifar-10-batches-py
-   --batches.meta
-   --readme.html
-   --data_batch_1
-   --data_batch_2
-   --data_batch_3
-   --data_batch_4
-   --data_batch_5
-   --test_batch
-   ```
+Here we provide the pretrained model weights of our approach for reproducing the experimental results reported in the paper.
+
+| Model | MACs (G) | Top-1 Acc. (%) | Configuration | Weights |
+| ------ | ------ | ------ | ------ | ------ |
+| Resnet50 (Baseline) | 4.1 | 76.0 | `configs/resnet50.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-1 | 1.2 | 73.9 | `configs/ec-static-1.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-2 | 1.3 | 74.2 | `configs/ec-static-2.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-3 | 1.8 | 75.6 | `configs/ec-static-3.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-4 | 2.4 | 76.3 | `configs/ec-static-4.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-5 | 3.2 | 76.8 | `configs/ec-static-5.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-6 | 4.2 | 77.2 | `configs/ec-static-6.yaml` | [Pretrained](https://www.google.com)
+
+
+
