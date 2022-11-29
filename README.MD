@@ -64,12 +64,12 @@ Here we provide the pretrained model weights of our approach for reproducing the
 | Model | MACs (G) | Top-1 Acc. (%) | Configuration | Weights |
 | ------ | ------ | ------ | ------ | ------ |
 | Resnet50 (Baseline) | 4.1 | 76.0 | `configs/resnet50.yaml` | [Pretrained](https://www.google.com)
-| EC-Static-1 | 1.2 | 73.9 | `configs/ec-static-1.yaml` | [Pretrained](https://www.google.com)
-| EC-Static-2 | 1.3 | 74.2 | `configs/ec-static-2.yaml` | [Pretrained](https://www.google.com)
-| EC-Static-3 | 1.8 | 75.6 | `configs/ec-static-3.yaml` | [Pretrained](https://www.google.com)
-| EC-Static-4 | 2.4 | 76.3 | `configs/ec-static-4.yaml` | [Pretrained](https://www.google.com)
-| EC-Static-5 | 3.2 | 76.8 | `configs/ec-static-5.yaml` | [Pretrained](https://www.google.com)
-| EC-Static-6 | 4.2 | 77.2 | `configs/ec-static-6.yaml` | [Pretrained](https://www.google.com)
+| EC-Static-1 | 1.2 | 73.9 | `configs/ec-static-1.yaml` | [Pretrained](https://drive.google.com/file/d/1PqWKOPH0jEEVnHFhsn5Hv7SV1Dnq5ho_/view?usp=share_link)
+| EC-Static-2 | 1.3 | 74.2 | `configs/ec-static-2.yaml` | [Pretrained](https://drive.google.com/file/d/19Gm_ek6OO7HrQ6PJ5q9Uqh99AjmUb9el/view?usp=share_link)
+| EC-Static-3 | 1.8 | 75.6 | `configs/ec-static-3.yaml` | [Pretrained](https://drive.google.com/file/d/1_hrdGV4ZZzHUAwLtFRc94e8ZuOodIUQ2/view?usp=share_link)
+| EC-Static-4 | 2.4 | 76.3 | `configs/ec-static-4.yaml` | [Pretrained](https://drive.google.com/file/d/1g2_t4zCIpcvbT49FjAaaYmjtQgg-zOyV/view?usp=share_link)
+| EC-Static-5 | 3.2 | 76.8 | `configs/ec-static-5.yaml` | [Pretrained](https://drive.google.com/file/d/17ZYzdjJBlFt8rP1DdOBoj1rib1RzzbAc/view?usp=share_link)
+| EC-Static-6 | 4.2 | 77.2 | `configs/ec-static-6.yaml` | [Pretrained](https://drive.google.com/file/d/1LKG3r_-QEY-_GVZTiPiu0lgfKvlWLCUu/view?usp=share_link)
 
 
 
