@@ -5,11 +5,12 @@ This repository is provided for reproducing the experimental results reported in
 ## Overview of The Proposed Framework
 
 ### 1. The overall framework
-![Framework](/images/framework.png)
+
+<img alt='framework' src='./images/framework.png' height=200px>
 
 ### 2. The dynamic inference framework
 
-![dynamic](/images/dynamic.png)
+<img alt='dynamic' src='./images/dynamic.png' width=500px>
 
 ## Environment
 
@@ -57,7 +58,7 @@ To reproduce the results reported in the paper, you need to get the datasets rea
 
 ## Pretrained Models
 
-### 1. ImageNet
+### ImageNet
 
 Here we provide the pretrained model weights of our approach for reproducing the experimental results reported in the paper.
 
