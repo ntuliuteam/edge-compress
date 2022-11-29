@@ -58,8 +58,6 @@ To reproduce the results reported in the paper, you need to get the datasets rea
 
 ## Pretrained Models
 
-### ImageNet
-
 Here we provide the pretrained model weights of our approach for reproducing the experimental results reported in the paper.
 
 | Model | MACs (G) | Top-1 Acc. (%) | Configuration | Weights |
@@ -73,4 +71,48 @@ Here we provide the pretrained model weights of our approach for reproducing the
 | EC-Static-6 | 4.2 | 77.2 | `configs/ec-static-6.yaml` | [Pretrained](https://drive.google.com/file/d/1LKG3r_-QEY-_GVZTiPiu0lgfKvlWLCUu/view?usp=share_link)
 
 
+## Evaluation
 
+In this section, we will demonstrate how to utilize the provided pretrained weights to reproduce the results reported in the paper.
+
+### Static inference
+For instance, to evaluate the **EC-Static-1** model, using the following command: 
+
+```
+python3 main.py -m crop_eval -c configs/ec-static-1.yaml
+                MODEL.WEIGHTS path/to/the/downloaded/ec-static-1/weights
+                DATASET.PATH path/to/imagenet/dataset
+```
+
+If everything goes right, you will obtain the following output:
+
+```
+[meters.py: 464]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "max_top1_acc": 73.8660, "max_top5_acc": 91.6160, "mem": 1650, "time_avg": 0.0679, "time_epoch": 13.3026, "top1_acc": 73.8660, "top5_acc": 91.6160}
+```
+
+### Dynamic inference
+To evaluate our dynamic inference framework, using the following command:
+
+```
+python3 main.py -m dy_eval -c configs/ec-dynamic.yaml
+                DATASET.PATH path/to/imagenet/dataset
+```
+
+and you will obtain an output as follows:
+
+```
+
+```
+
+### Parallel processing with multiple GPUs
+It's worth noting that all models support parallel processing by specifying the execution hyperparameter **NUM_GPUS**.
+
+For example, to evaluate the **EC-Static-1** model with 4 GPUs, you just need to slight adjust the execution command as follows:
+
+```
+python3 main.py -m crop_eval -c configs/ec-static-1.yaml
+                MODEL.WEIGHTS path/to/the/downloaded/ec-static-1/weights
+                DATASET.PATH path/to/imagenet/dataset
+                NUM_GPUS 4
+```
+and you can easily accelerate the evaluation process.
