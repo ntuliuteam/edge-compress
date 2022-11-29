@@ -101,7 +101,7 @@ python3 main.py -m dy_eval -c configs/ec-dynamic.yaml
 and you will obtain an output as follows:
 
 ```
-
+[meters.py: 464]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "max_top1_acc": 77.6900, "max_top5_acc": 93.4220, "mem": 3122, "time_avg": 0.1445, "time_epoch": 56.4998, "top1_acc": 77.6900, "top5_acc": 93.4220}
 ```
 
 ### Parallel processing with multiple GPUs
